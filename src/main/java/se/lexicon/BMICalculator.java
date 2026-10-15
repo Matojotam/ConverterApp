@@ -26,6 +26,8 @@ public class BMICalculator {
         IO.println(String.format("Your BMI: %.2f", bmi));
         IO.println("Category: " + category);
         IO.println("==================================");
+
+        ConversionHistory.add(String.format("BMI: %.2f - %s", bmi, category));
     }
 
     public static double calculateBMI(double weight, double height) {

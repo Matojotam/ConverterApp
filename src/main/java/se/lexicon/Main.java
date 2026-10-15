@@ -18,9 +18,9 @@ public class Main {
             IO.println("3. BMI Calculator");
             IO.println("4. Exit");
             IO.println("==================================");
-            IO.print("Choose an option: ");
 
-            int choice = scanner.nextInt();
+
+            int choice = InputHelper.readInt(scanner, "Choose an option: ");
 
             switch (choice) {
                 case 1:
@@ -30,10 +30,10 @@ public class Main {
                     CurrencyConverter.convert(scanner);
                     break;
                 case 3:
-                    // We will call the BMI method here
+                    BMICalculator.convert(scanner);
                     break;
                 case 4:
-                    IO.println("Goodbye!");
+                    ConversionHistory.showHistory();
                     running = false;
                     break;
                 default:
