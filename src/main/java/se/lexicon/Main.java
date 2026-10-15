@@ -10,21 +10,23 @@ public class Main {
 
         while (running) {
 
-            System.out.println("==================================");
-            System.out.println("      LEXICON CONVERTER APP");
-            System.out.println("==================================");
-            System.out.println("1. Temperature Converter");
-            System.out.println("2. Currency Converter");
-            System.out.println("3. BMI Calculator");
-            System.out.println("4. Exit");
-            System.out.println("==================================");
-            System.out.print("Choose an option: ");
+            IO.println("==================================");
+            IO.println("      LEXICON CONVERTER APP");
+            IO.println("==================================");
+            IO.println("1. Temperature Converter");
+            IO.println("2. Currency Converter");
+            IO.println("3. BMI Calculator");
+            IO.println("4. Exit");
+            IO.println("==================================");
+            IO.print("Choose an option: ");
 
             int choice = scanner.nextInt();
 
             switch (choice) {
                 case 1:
-                    // We will call the temperature method here
+                    if (choice == 1) {
+                        TemperatureConverter.convert(scanner);
+                    }
                     break;
                 case 2:
                     // We will call the currency method here
@@ -33,14 +35,14 @@ public class Main {
                     // We will call the BMI method here
                     break;
                 case 4:
-                    System.out.println("Goodbye!");
+                    IO.println("Goodbye!");
                     running = false;
                     break;
                 default:
-                    System.out.println("Invalid option. Please try again.");
+                    IO.println("Invalid option.");
+            }
+
+
         }
-
-
-
     }
 }
