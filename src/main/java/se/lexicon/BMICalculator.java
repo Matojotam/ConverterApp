@@ -9,11 +9,11 @@ public class BMICalculator {
         IO.println("          BMI CALCULATOR");
         IO.println("==================================");
 
-        IO.print("Enter your weight in kilograms: ");
-        double weight = scanner.nextDouble();
+        double weight = InputHelper.readDouble(
+                scanner, "Enter your weight in kilograms: ");
 
-        IO.print("Enter your height in metres: ");
-        double height = scanner.nextDouble();
+        double height = InputHelper.readDouble(
+                scanner, "Enter your height in metres: ");
 
         if (weight <= 0 || height <= 0) {
             IO.println("Weight and height must be greater than zero.");
