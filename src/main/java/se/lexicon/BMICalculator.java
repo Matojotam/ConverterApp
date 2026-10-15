@@ -22,12 +22,19 @@ public class BMICalculator {
         double bmi = calculateBMI(weight, height);
         String category = getBMICategory(bmi);
 
+
         IO.println("----------------------------------");
         IO.println(String.format("Your BMI: %.2f", bmi));
         IO.println("Category: " + category);
+
+        String timestamp = DateTimeHelper.getCurrentDateTime();
+
+        IO.println("Calculated at: " + timestamp);
         IO.println("==================================");
 
-        ConversionHistory.add(String.format("BMI: %.2f - %s", bmi, category));
+        ConversionHistory.add(
+                String.format("BMI: %.2f - %s | %s", bmi, category, timestamp));
+
     }
 
     public static double calculateBMI(double weight, double height) {
