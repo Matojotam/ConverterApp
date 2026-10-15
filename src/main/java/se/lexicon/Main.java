@@ -24,12 +24,10 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    if (choice == 1) {
-                        TemperatureConverter.convert(scanner);
-                    }
+                    TemperatureConverter.convert(scanner);
                     break;
                 case 2:
-                    // We will call the currency method here
+                    CurrencyConverter.convert(scanner);
                     break;
                 case 3:
                     // We will call the BMI method here
