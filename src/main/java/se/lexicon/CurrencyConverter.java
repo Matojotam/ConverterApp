@@ -31,58 +31,107 @@ public class CurrencyConverter {
 
         double result;
 
+
         switch (choice) {
 
-            case 1:
+            case 1: {
                 result = sekToEur(amount);
-                IO.println(String.format("%.2f SEK = %.2f EUR",
-                        amount, result));
-                ConversionHistory.add(String.format("%.2f SEK = %.2f EUR",
-                        amount, result));
+
+                String conversion = String.format(
+                        "%.2f SEK = %.2f EUR", amount, result);
+
+                String timestamp = DateTimeHelper.getCurrentDateTime();
+
+                IO.println("Result: " + conversion);
+                IO.println("Converted at: " + timestamp);
+
+                ConversionHistory.add(conversion + " | " + timestamp);
                 break;
+            }
 
-
-            case 2:
+            case 2: {
                 result = eurToSek(amount);
-                IO.println(String.format("%.2f EUR = %.2f SEK",
-                        amount, result));
-                ConversionHistory.add(String.format("%.2f EUR = %.2f SEK", amount, result));
-                break;
 
-            case 3:
+                String conversion = String.format(
+                        "%.2f EUR = %.2f SEK", amount, result);
+
+                String timestamp = DateTimeHelper.getCurrentDateTime();
+
+                IO.println("Result: " + conversion);
+                IO.println("Converted at: " + timestamp);
+
+                ConversionHistory.add(conversion + " | " + timestamp);
+                break;
+            }
+
+            case 3: {
                 result = sekToUsd(amount);
-                IO.println(String.format("%.2f SEK = %.2f USD",
-                        amount, result));
-                ConversionHistory.add(String.format("%.2f SEK = %.2f USD", amount, result));
-                break;
 
-            case 4:
+                String conversion = String.format(
+                        "%.2f SEK = %.2f USD", amount, result);
+
+                String timestamp = DateTimeHelper.getCurrentDateTime();
+
+                IO.println("Result: " + conversion);
+                IO.println("Converted at: " + timestamp);
+
+                ConversionHistory.add(conversion + " | " + timestamp);
+                break;
+            }
+
+            case 4: {
                 result = usdToSek(amount);
-                IO.println(String.format("%.2f USD = %.2f SEK",
-                        amount, result));
-                ConversionHistory.add(String.format("%.2f USD = %.2f SEK", amount, result));
-                break;
 
-            case 5:
+                String conversion = String.format(
+                        "%.2f USD = %.2f SEK", amount, result);
+
+                String timestamp = DateTimeHelper.getCurrentDateTime();
+
+                IO.println("Result: " + conversion);
+                IO.println("Converted at: " + timestamp);
+
+                ConversionHistory.add(conversion + " | " + timestamp);
+                break;
+            }
+
+            case 5: {
                 result = eurToUsd(amount);
-                IO.println(String.format("%.2f EUR = %.2f USD",
-                        amount, result));
-                ConversionHistory.add(String.format("%.2f EUR = %.2f USD", amount, result));
-                break;
 
-            case 6:
-                result = usdToEur(amount);
-                IO.println(String.format("%.2f USD = %.2f EUR",
-                        amount, result));
-                ConversionHistory.add(String.format("%.2f USD = %.2f EUR", amount, result));
+                String conversion = String.format(
+                        "%.2f EUR = %.2f USD", amount, result);
+
+                String timestamp = DateTimeHelper.getCurrentDateTime();
+
+                IO.println("Result: " + conversion);
+                IO.println("Converted at: " + timestamp);
+
+                ConversionHistory.add(conversion + " | " + timestamp);
                 break;
+            }
+
+            case 6: {
+                result = usdToEur(amount);
+
+                String conversion = String.format(
+                        "%.2f USD = %.2f EUR", amount, result);
+
+                String timestamp = DateTimeHelper.getCurrentDateTime();
+
+                IO.println("Result: " + conversion);
+                IO.println("Converted at: " + timestamp);
+
+                ConversionHistory.add(conversion + " | " + timestamp);
+                break;
+            }
 
             default:
                 IO.println("Invalid option.");
         }
-        }
-public static double sekToEur(double sek) {
-    return sek * SEK_TO_EUR;
+
+    }
+
+    public static double sekToEur(double sek) {
+        return sek * SEK_TO_EUR;
 }
     public static double eurToSek(double eur) {
         return eur / SEK_TO_EUR;

@@ -27,11 +27,14 @@ public class TemperatureConverter {
 
             double fahrenheit = celsiusToFahrenheit(celsius);
 
-            IO.println(String.format("%.2f C = %.2f F",
-                    celsius, fahrenheit));
+            String result = String.format("%.2f C = %.2f F",
+                    celsius, fahrenheit);
 
-            ConversionHistory.add(String.format("%.2f C = %.2f F",
-                    celsius, fahrenheit));
+            IO.println("Result: " + result);
+            IO.println("Converted at: " + DateTimeHelper.getCurrentDateTime());
+
+            ConversionHistory.add(result);
+
         } else if (choice == 2) {
 
             double fahrenheit = InputHelper.readDouble(
@@ -39,11 +42,14 @@ public class TemperatureConverter {
 
             double celsius = fahrenheitToCelsius(fahrenheit);
 
-            IO.println(String.format("%.2f F = %.2f C",
-                    fahrenheit, celsius));
+            String result = String.format("%.2f F = %.2f C",
+                    fahrenheit, celsius);
 
-            ConversionHistory.add(String.format("%.2f F = %.2f C",
-                    fahrenheit, celsius));
+            IO.println("Result: " + result);
+            IO.println("Converted at: " + DateTimeHelper.getCurrentDateTime());
+
+            ConversionHistory.add(result);
+
         } else {
             IO.println("Invalid option.");
         }
